@@ -113,7 +113,7 @@ header {
   transition: all 0.5s;
 }
 
-.menu-icon {
+span.menu-icon {
   color: white;
   float: right;
   font-size: 25px;
