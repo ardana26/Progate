@@ -1,0 +1,36 @@
+.main {
+  margin: 10px;
+}
+
+.main li {
+  list-style: none;
+  float: left;
+  height: 100px;
+  width: 33%;
+  margin-bottom: 10px;
+}
+
+.main .blue1 {
+  background-color: #0ac4ff;
+}
+
+.main .blue2 {
+  background-color: #00a2d6;
+}
+
+.main .blue3 {
+  background-color: #007ca3;
+}
+
+.main .pink1 {
+  background-color: #fd6eb6;
+}
+
+.main .pink2 {
+  background-color: #fea0cf;
+}
+
+.main .pink3 {
+  background-color: #fed3e9;
+}
+/*# sourceMappingURL=stylesheet.css.map */

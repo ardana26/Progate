@@ -1,0 +1,35 @@
+.main {
+  margin: 20px;
+  text-align: center;
+}
+
+.main .title {
+  color: #455b6d;
+  margin-bottom: 10px;
+}
+
+.main .button {
+  display: inline-block;
+  border-radius: 50%;
+  margin: 10px;
+  text-align: center;
+  height: 64px;
+  width: 64px;
+  color: #ffffff;
+  font-size: 32px;
+  -webkit-box-shadow: 1px 2px 6px rgba(106, 137, 152, 0.3);
+          box-shadow: 1px 2px 6px rgba(106, 137, 152, 0.3);
+}
+
+.main .twitter {
+  background-color: #1dcaff;
+}
+
+.main .facebook {
+  background-color: #405f9e;
+}
+
+.main .fa {
+  line-height: 64px;
+}
+/*# sourceMappingURL=stylesheet.css.map */

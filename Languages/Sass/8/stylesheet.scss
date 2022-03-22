@@ -1,0 +1,35 @@
+@import 'variables';
+
+.main {
+  margin: 20px;
+  text-align: center;
+
+  .title {
+    color: #455b6d;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+    text-align: center;
+    height: 64px;
+    width: 64px;
+    color: #ffffff;
+    font-size: 32px;
+    box-shadow: 1px 2px 6px rgba(106, 137, 152, 0.3)
+  }
+
+  .twitter {
+    background-color: $twitter;
+  }
+
+  .facebook {
+    background-color: $facebook;
+  }
+
+  .fa {
+    line-height: 64px;
+  }
+}
