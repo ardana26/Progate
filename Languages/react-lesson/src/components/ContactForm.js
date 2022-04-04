@@ -7,6 +7,8 @@ class ContactForm extends React.Component {
       isSubmitted: false,
       email: "",
       hasEmailError: false,
+      content: "",
+      hasContentError: false,
     };
   }
 
@@ -16,11 +18,22 @@ class ContactForm extends React.Component {
     this.setState({ email: inputValue, hasEmailError: isEmpty });
   }
 
+  handleContentChange(event) {
+    const inputValue = event.target.value;
+    const isEmpty = inputValue === "";
+    this.setState({ content: inputValue, hasContentError: isEmpty });
+  }
+
   handleSubmit() {
     this.setState({ isSubmitted: true });
   }
 
   render() {
+    let contentErrorText;
+    if (this.state.hasContentError) {
+      contentErrorText = <p className="contact-message-error">Masukkan pesan Anda</p>;
+    }
+
     let emailErrorText;
     if (this.state.hasEmailError) {
       emailErrorText = <p className="contact-message-error">Masukkan alamat email Anda</p>;
@@ -49,7 +62,14 @@ class ContactForm extends React.Component {
           />
           {emailErrorText}
           <p>Pesan (wajib diisi)</p>
-          <textarea name="pesan" cols="30" rows="10" />
+          <textarea
+            name="pesan"
+            value={this.state.content}
+            onChange={(event) => {
+              this.handleContentChange(event);
+            }}
+          />
+          {contentErrorText}
           <input type="submit" value="Kirim" />
         </form>
       );
