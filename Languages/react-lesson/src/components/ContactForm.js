@@ -6,12 +6,14 @@ class ContactForm extends React.Component {
     this.state = {
       isSubmitted: false,
       email: "",
+      hasEmailError: false,
     };
   }
 
   handleEmailChange(event) {
     const inputValue = event.target.value;
-    this.setState({ email: inputValue });
+    const isEmpty = inputValue === "";
+    this.setState({ email: inputValue, hasEmailError: isEmpty });
   }
 
   handleSubmit() {
@@ -19,6 +21,11 @@ class ContactForm extends React.Component {
   }
 
   render() {
+    let emailErrorText;
+    if (this.state.hasEmailError) {
+      emailErrorText = <p className="contact-message-error">Masukkan alamat email Anda</p>;
+    }
+
     let contactForm;
 
     if (this.state.isSubmitted) {
@@ -40,6 +47,7 @@ class ContactForm extends React.Component {
               this.handleEmailChange(event);
             }}
           />
+          {emailErrorText}
           <p>Pesan (wajib diisi)</p>
           <textarea name="pesan" cols="30" rows="10" />
           <input type="submit" value="Kirim" />
