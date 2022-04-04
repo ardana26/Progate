@@ -5,7 +5,13 @@ class ContactForm extends React.Component {
     super(props);
     this.state = {
       isSubmitted: false,
+      email: "",
     };
+  }
+
+  handleEmailChange(event) {
+    const inputValue = event.target.value;
+    this.setState({ email: inputValue });
   }
 
   handleSubmit() {
@@ -26,7 +32,14 @@ class ContactForm extends React.Component {
           }}
         >
           <p>Alamat Email (wajib diisi)</p>
-          <input type="text" name="email" />
+          <input
+            type="email"
+            name="email"
+            value={this.state.email}
+            onChange={(event) => {
+              this.handleEmailChange(event);
+            }}
+          />
           <p>Pesan (wajib diisi)</p>
           <textarea name="pesan" cols="30" rows="10" />
           <input type="submit" value="Kirim" />
